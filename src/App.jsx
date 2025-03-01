@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState} from 'react'
 import './App.css'
-import clear_icon from "../Assets/clear.png"
-import cloud_icon from "../Assets/cloud.png"
-import drizzle_icon from "../Assets/drizzle.png"
-import rain_icon from "../Assets/rain.png"
-import snow_icon from "../Assets/snow.png"
+import clear_icon from "../public/clear.png"
+import cloud_icon from "../public/cloud.png"
+import drizzle_icon from "../public/drizzle.png"
+import rain_icon from "../public/rain.png"
+import snow_icon from "../public/snow.png"
+import humidity_img from "../public/humidity.png"
+import search_img from "../public/search.png"
+import wind_img from "../public/wind.png"
+
 
 function App() {
 
@@ -69,7 +73,7 @@ function App() {
     <div className='card'>
     <div className="search_row">
         <input placeholder='Search' ref={inputRef}></input>
-        <img src="../../Assets/search.png" alt="Search_icon" onClick={()=>search(inputRef.current.value)}></img>
+        <img src={search_img} alt="Search_icon" onClick={()=>search(inputRef.current.value)}></img>
     </div>
     {weather_data?<>
     <img src={weather_data.icon} alt="Weather_icon" className='weather_image' ></img>
@@ -77,14 +81,14 @@ function App() {
     <p className='city'>{weather_data.city}</p>
     <div className='Humidity_wind_row'>
       <div className='Humidity_flex'>
-        <img src="../../Assets/humidity.png" alt="Humidity_icon" className='humidity_img'></img>
+        <img src={humidity_img} alt="Humidity_icon" className='humidity_img'></img>
         <div>
           <p>{weather_data.humidity}%</p>
           <p>Humidity</p>
         </div>
       </div>
       <div className='Wind_flex'>
-        <img src="../../Assets/wind.png" alt="Wind_icon" className='wind_img'></img>
+        <img src={wind_img} alt="Wind_icon" className='wind_img'></img>
         <div>
           <p>{weather_data.wind} Km/h</p>
           <p>Wind Speed</p>
